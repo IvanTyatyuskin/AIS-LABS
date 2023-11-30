@@ -1,0 +1,15 @@
+C:\Users\tyaty\Desktop\ConsoleApp1\Client\obj\Debug\MainWindow.g.cs
+C:\Users\tyaty\Desktop\ConsoleApp1\Client\obj\Debug\App.g.cs
+C:\Users\tyaty\Desktop\ConsoleApp1\Client\obj\Debug\Client_MarkupCompile.cache
+C:\Users\tyaty\Desktop\ConsoleApp1\Client\obj\Debug\Client_MarkupCompile.lref
+C:\Users\tyaty\Desktop\ConsoleApp1\Client\bin\Debug\Client.exe.config
+C:\Users\tyaty\Desktop\ConsoleApp1\Client\bin\Debug\Client.exe
+C:\Users\tyaty\Desktop\ConsoleApp1\Client\bin\Debug\Client.pdb
+C:\Users\tyaty\Desktop\ConsoleApp1\Client\obj\Debug\MainWindow.baml
+C:\Users\tyaty\Desktop\ConsoleApp1\Client\obj\Debug\Client.g.resources
+C:\Users\tyaty\Desktop\ConsoleApp1\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\tyaty\Desktop\ConsoleApp1\Client\obj\Debug\Client.csproj.GenerateResource.cache
+C:\Users\tyaty\Desktop\ConsoleApp1\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\tyaty\Desktop\ConsoleApp1\Client\obj\Debug\Client.exe
+C:\Users\tyaty\Desktop\ConsoleApp1\Client\obj\Debug\Client.pdb
+C:\Users\tyaty\Desktop\ConsoleApp1\Client\obj\Debug\Client.csprojAssemblyReference.cache
