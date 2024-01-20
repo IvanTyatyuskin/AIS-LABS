@@ -1,0 +1,26 @@
+﻿<Window x:Class="CourseProject.GraphicsReports"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        xmlns:local="clr-namespace:CourseProject"
+        mc:Ignorable="d"
+        Title="GraphicsReports" Height="450" Width="854">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="147" Height="32">
+            <Run Text="Желаемое распределение"/>
+            <LineBreak/>
+            <Run Text="фильмов:"/>
+        </TextBlock>
+        <StackPanel x:Name="optionsGroup" Orientation="Vertical">
+            <RadioButton Content="По странам" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" GroupName="radioButtons"/>
+            <RadioButton Content="По рейтингу и году" HorizontalAlignment="Left" Margin="10,5,0,0" GroupName="radioButtons"/>
+            <RadioButton Content="По жанрам" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" GroupName="radioButtons"/>
+        </StackPanel>
+        <oxy:PlotView Model="{Binding GraphicsPlot}" Margin="162,10,10,10" />
+        <Button Name="drawGraphic" Content="Отобразить график" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" Width="125" Click="drawGraphic_Click"/>
+        <Button Name="saveGraphic" Content="Сохранить график" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top" Width="125" Click="saveGraphic_Click" />
+        <Button Name="reportButton" Content="Сформировать отчет" HorizontalAlignment="Left" Margin="10,157,0,0" VerticalAlignment="Top" Width="125" Click="reportButton_Click"/>
+    </Grid>
+</Window>

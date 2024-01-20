@@ -1,0 +1,108 @@
+﻿<Window x:Class="CourseProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseProject.Validation"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="473" Width="1101">
+
+    <Grid Margin="0,0,0,-6">
+        <Button Name="parsingButton" Content="Парсинг" HorizontalAlignment="Left" Margin="10,408,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Name="loadButton" Content="Загрузка из БД" HorizontalAlignment="Left" Margin="65,408,0,0" VerticalAlignment="Top" Click="Load_Button_Click"/>
+        <Button Name="saveButton" Content="Сохранение в БД" HorizontalAlignment="Left" Margin="156,408,0,0" VerticalAlignment="Top" Click="Save_Button_Click"/>
+        <DataGrid Name="moviesGrid" ItemsSource="{Binding Movies}" Margin="0,0,0,80" Loaded="moviesGrid_Loaded" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Width="31">
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="Number" UpdateSourceTrigger="PropertyChanged">
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Название на русском" Width="140">
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="TitleRU" UpdateSourceTrigger="PropertyChanged">
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Название на английском" Width="150">
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="TitleEN" UpdateSourceTrigger="PropertyChanged">
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Год выпуска" Width="80" >
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="Year" UpdateSourceTrigger="Explicit">
+                            <Binding.ValidationRules>
+                                <local:YearValidationRule/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Длительность (мин.)" Width="120" >
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="Duration" UpdateSourceTrigger="Explicit">
+                            <Binding.ValidationRules>
+                                <local:DurationValidationRule/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Страна производства" Width="130">
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="CountryName" UpdateSourceTrigger="PropertyChanged">
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Жанр" Width="75">
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="GenreName" UpdateSourceTrigger="PropertyChanged">
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Режиссер" Width="120">
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="DirectorName" UpdateSourceTrigger="PropertyChanged">
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Актеры" Width="90">
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="Cast" UpdateSourceTrigger="PropertyChanged">
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="⭐" Width="25" >
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="Rating" UpdateSourceTrigger="Explicit">
+                            <Binding.ValidationRules>
+                                <local:RatingValidationRule/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Кол-во голосов" Width="100" >
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="Votes" UpdateSourceTrigger="Explicit">
+                            <Binding.ValidationRules>
+                                <local:VotesValidationRule/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="deleteButton" Content="Удалить выбранную строку" HorizontalAlignment="Left" Margin="10,369,0,0" VerticalAlignment="Top" Click="deleteButton_Click" RenderTransformOrigin="-0.685,2.983"/>
+        <Button Name="graphicsReportsButton" Content="Рисовать графики и сгенерировать отчет" HorizontalAlignment="Left" Margin="841,408,0,0" VerticalAlignment="Top" Click="graphicsReportsButton_Click"/>
+    </Grid>
+</Window>
